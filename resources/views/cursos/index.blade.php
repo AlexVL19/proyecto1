@@ -21,7 +21,8 @@
                     <ul class="list-group list-group-flush">
                       <li class="list-group-item">{{$uwu->desc}}</li>
                     </ul>
-                    <a href="#" class="btn btn-dark">Ver más</a>
+                    {{--Se requiere del ID para acceder a un registro en particular--}}
+                    <a href="/curso/{{$uwu->id}}" class="btn btn-dark">Ver más</a>
                   </div>
             </div>
     @endforeach

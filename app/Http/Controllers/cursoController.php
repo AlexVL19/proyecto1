@@ -65,7 +65,9 @@ class cursoController extends Controller
      */
     public function show($id)
     {
-        //
+        //Creamos un arreglo para encontrar un sólo elemento
+        $cursito = curso::find($id);
+        return view('cursos.show', compact('cursito'));
     }
 
     /**

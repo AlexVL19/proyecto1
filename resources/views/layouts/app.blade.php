@@ -15,8 +15,8 @@
         {{--Este container no se debe cambiar--}}
         <nav class="navbar navbar-expand navbar-dark bg-dark">
             <div class="nav navbar-nav">
-                <a class="nav-item nav-link active" href="#">Cursos <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="#">Home</a>
+                <a class="nav-item nav-link active" href="#">Cursos</a>
+                <a class="nav-item nav-link" href="#">Inicio</a>
             </div>
         </nav>
         <div class="container">
