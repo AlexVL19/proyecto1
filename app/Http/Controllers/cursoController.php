@@ -78,7 +78,9 @@ class cursoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $cursito = curso::find($id);
+
+        return view('cursos.edit', compact('cursito'));
     }
 
     /**
@@ -90,7 +92,16 @@ class cursoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $cursito = curso::find($id);
+
+        //Con fill se llena toda la info. que viene desde la solicitud
+        $cursito->fill($request->except('image')); //Con except se hacen excepciones cuando se usa fill
+        if ($request->hasFile('image')){
+            $cursito->imagen = $request->file('image')->store('public');
+        }
+        $cursito->save();
+
+        return 'Recurso actualizado!';
     }
 
     /**
