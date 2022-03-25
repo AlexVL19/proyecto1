@@ -5,6 +5,7 @@ use App\Http\Controllers\control1;
 use App\Http\Controllers\cursoController;
 use App\Http\Controllers\heladoControl;
 use App\Http\Controllers\preciosControl;
+use App\Http\Controllers\docenteController;
 
 //invocar el controlador desde su ruta
 
@@ -54,3 +55,5 @@ Route::get('/precio/{precio}', [preciosControl::class, 'precio']);
 Route::get('/getiva/{price},{producto}', [preciosControl::class, 'getiva']);
 
 Route::resource('curso', cursoController::class);
+
+Route::resource('docente', docenteController::class);

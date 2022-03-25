@@ -8,6 +8,20 @@
 {{--Se utiliza el atributo enctype para poder subir archivos--}}
 <form action="/curso" method="POST" enctype="multipart/form-data">
     @csrf
+
+    {{-- Se implementan las validaciones anteriormente hechas en el controlador--}}
+
+    @if ($errors->any())
+        @foreach ($errors->all() as $alert)
+            <div class="alert alert-danger mt-4" role="alert">
+                <ul>
+                    <li>{{$alert}}</li>
+                </ul>
+            </div>
+        @endforeach
+    @endif
+
+    {{-- Cuerpo del documento --}}
     <div class="form-group" >
         <br>
         <h3>Inscripción de curso</h3>

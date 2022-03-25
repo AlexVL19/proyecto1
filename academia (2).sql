@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-03-2022 a las 23:28:05
+-- Tiempo de generación: 26-03-2022 a las 00:26:10
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.12
 
@@ -45,7 +45,32 @@ INSERT INTO `cursos` (`id`, `name`, `desc`, `imagen`, `created_at`, `updated_at`
 (2, 'Filosofía', 'Solo sé que nada sé', 'public/K83Z1A60y5jslYAUZwcaQXxIyU3mPvCASPRYiRP8.jpg', '2022-03-05 03:16:29', '2022-03-05 03:16:29'),
 (4, 'Laravel', 'Holiwi uwu', 'public/FA0GleHFEISRMxKnjqYvCI1YEYlWWHG9GFfbFDdk.jpg', '2022-03-05 03:42:05', '2022-03-05 03:42:05'),
 (5, 'Defensa personal', 'Muy defensivo', 'public/qZBoHbYnKvn8pYW9cQOyvgCm8i8whviAfOpYJtao.jpg', '2022-03-05 03:46:13', '2022-03-05 03:46:13'),
-(6, 'Técnico de computadoras', 'a', 'public/tTRv6FG7Y5oe609bUaUfft2a4z4M0Ad2lwwTwS27.jpg', '2022-03-11 23:57:25', '2022-03-11 23:57:25');
+(6, 'Limpieza de caché', 'Nya', 'public/3T55qOZ5GtYA6wr5Hl6KKlYZduOOKrP47vvxTHnO.png', '2022-03-11 23:57:25', '2022-03-19 03:49:49');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `docentes`
+--
+
+CREATE TABLE `docentes` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `second_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `imagen_docente` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `associate` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `docentes`
+--
+
+INSERT INTO `docentes` (`id`, `name`, `second_name`, `imagen_docente`, `title`, `associate`, `created_at`, `updated_at`) VALUES
+(1, 'David', 'Gómez', 'public/WHj2IriLR4acU7vTGGSOuMhR1Q6h6Ildfx7MEWGu.jpg', 'Lic. en letras', 'Lenguaje', '2022-03-25 22:20:29', '2022-03-25 23:08:10'),
+(2, 'Fernando', 'Alonso', 'public/MKRTOTCR5CXtcOfHITga39qMa33iTgBbnh7Yj3lW.png', 'Lic. en filosofía', 'Filosofía', '2022-03-25 23:09:42', '2022-03-25 23:09:42');
 
 -- --------------------------------------------------------
 
@@ -85,7 +110,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
 (4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
 (5, '2022_02_18_224526_create_cursos_table', 1),
-(6, '2022_03_04_200940_add_imagen_to_cursos', 2);
+(6, '2022_03_04_200940_add_imagen_to_cursos', 2),
+(7, '2022_03_25_165851_create_docentes_table', 3);
 
 -- --------------------------------------------------------
 
@@ -145,6 +171,12 @@ ALTER TABLE `cursos`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `docentes`
+--
+ALTER TABLE `docentes`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -189,6 +221,12 @@ ALTER TABLE `cursos`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT de la tabla `docentes`
+--
+ALTER TABLE `docentes`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT de la tabla `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -198,7 +236,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT de la tabla `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `personal_access_tokens`
