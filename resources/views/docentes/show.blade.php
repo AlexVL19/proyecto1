@@ -13,5 +13,12 @@
         <p class="text-center">Asociado en el área de {{$doc->associate}}</p>
         <p class="text-center">Usuario creado en {{$doc->created_at}}</p>
         <a href="/docente/{{$doc->id}}/edit" class="btn btn-dark">Editar curso</a>
+<br>
+<br>
+        <form class="form-group" action="/docente/{{$doc->id}}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-danger">Eliminar curso</button>
+        </form>
     </div>
 @endsection

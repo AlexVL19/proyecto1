@@ -12,5 +12,12 @@
         <p class="text-center">{{$cursito->desc}}</p>
         <p class="text-center">Curso creado en {{$cursito->created_at}}</p>
         <a href="/curso/{{$cursito->id}}/edit" class="btn btn-dark">Editar curso</a>
+<br>
+<br>
+        <form class="form-group" action="/curso/{{$cursito->id}}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-danger">Eliminar curso</button>
+        </form>
     </div>
 @endsection
